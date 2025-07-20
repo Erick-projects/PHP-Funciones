@@ -15,7 +15,6 @@
 
     <h1>Ejercicios de Lógica con PHP</h1>
 
-    <!-- Ejercicio 1: Suma de Pares -->
     <form method="post">
         <h3>1. Sumar Números Pares en un Array</h3>
         <label>Ingresa números separados por comas (ej: 1,2,3,4,5):</label><br>
@@ -23,7 +22,6 @@
         <br><button type="submit">Sumar Pares</button>
     </form>
 
-    <!-- Ejercicio 2: Costo de llamada -->
     <form method="post">
         <h3>2. Costo de Llamada Internacional</h3>
         <label>Clave de Zona:</label><br>
@@ -41,7 +39,6 @@
         <br><button type="submit">Calcular Costo</button>
     </form>
 
-    <!-- Ejercicio 3: FizzBuzz -->
     <form method="post">
         <h3>3. FizzBuzz</h3>
         <label>Ingresa un número:</label><br>
@@ -49,10 +46,8 @@
         <br><button type="submit">Generar FizzBuzz</button>
     </form>
 
-    <!-- Mostrar resultados -->
     <div class="resultado">
     <?php
-    // Ejercicio 1: Suma de números pares
     function sumarPares($array) {
         $suma = 0;
         foreach ($array as $numero) {
@@ -63,7 +58,6 @@
         return $suma;
     }
 
-    // Ejercicio 2: Calcular costo de llamada
     function calcularCostoLlamada($clave, $minutos) {
         $zonas = [
             12 => 2.00,
@@ -83,13 +77,12 @@
         $total = $minutos * $precioMinuto;
 
         if ($minutos < 30) {
-            $total *= 0.90; // 10% descuento
+            $total *= 0.90;
         }
 
         return "Costo total: $" . number_format($total, 2);
     }
 
-    // Ejercicio 3: FizzBuzz
     function fizzBuzz($n) {
         $resultado = [];
         for ($i = 1; $i <= $n; $i++) {
@@ -106,7 +99,6 @@
         return $resultado;
     }
 
-    // Procesamiento de formularios
     if (isset($_POST['numeros_pares'])) {
         $entrada = $_POST['numeros_pares'];
         $array = array_map('intval', explode(',', $entrada));
